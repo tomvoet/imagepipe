@@ -16,7 +16,6 @@ use std::sync::Arc;
 use std::io::Write;
 use std::path::Path;
 use std::hash::{Hash, Hasher};
-use std::time::Instant;
 
 /// A RawImage processed into a full 8bit sRGB image with levels and gamma
 ///
@@ -68,12 +67,12 @@ impl ImageSource {
 macro_rules! do_timing {
   ($name:expr, $body:expr) => {
     {
-      let from_time = Instant::now();
+      // let from_time = Instant::now();
       let ret = {
         $body
       };
-      let duration = from_time.elapsed();
-      info!("timing: {:>7} ms for |{}", duration.as_millis(), $name);
+      // let duration = from_time.elapsed();
+      // info!("timing: {:>7} ms for |{}", duration.as_millis(), $name);
       ret
     }
   }
